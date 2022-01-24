@@ -6,7 +6,7 @@
       <img class="icon" src="@/assets/Tyreal.png" alt="" />
     </h1>
     <div v-for="(value, key) in allItems" :key="key">
-      <h2>{{ key }} {{ value }}</h2>
+      <h2>{{ key }} - {{ value }}</h2>
     </div>
     <img class="icon" src="@/assets/Barbarian-icon.png" alt="" />
   </div>
