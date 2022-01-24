@@ -6,7 +6,10 @@
       <img class="icon" src="@/assets/Tyreal.png" alt="" />
     </h1>
     <div v-for="(value, key) in allItems" :key="key">
-      <h2>{{ key }} - {{ value }}</h2>
+      <span class="runeword">
+        <u>{{ key }}</u> -
+      </span>
+      <span class="status">{{ value }}</span>
     </div>
     <img class="icon" src="@/assets/Barbarian-icon.png" alt="" />
   </div>
@@ -66,5 +69,14 @@ h2 {
 .icon {
   padding-left: 10px;
   padding-right: 10px;
+}
+.runeword {
+  font-family: exo;
+  font-size: 28px;
+}
+.status {
+  font-family: exo;
+  font-size: 26px;
+  font-style: italic;
 }
 </style>
