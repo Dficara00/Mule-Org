@@ -1,15 +1,16 @@
 <template>
   <div>
     <div>
-      <h1>
+      <h1 class="mHead">
         <img class="icon" src="@/assets/stashClosed.png" alt="" />
         <u> Mule Inventories</u>
         <img class="icon" src="@/assets/Treasure-Open-icon.png" alt="" />
       </h1>
     </div>
-    <br />
     <div v-for="(value, key) in muleObject" :key="key">
-      <h2 class="muleead">{{ key }}</h2>
+      <h2 class="mHead">
+        <u>{{ key }}</u>
+      </h2>
       <div class="invBox" v-for="item in value" :key="item.rune">
         <span class="rune"> {{ item.rune }} </span>
         <span class="base">{{ item.base }} </span>
@@ -38,14 +39,17 @@ export default {
 .invBox {
   display: flex;
   justify-content: center;
-  align-items: center;
   color: black;
+  margin: 5px;
 }
 .rune {
-  padding: 4px;
+  padding-right: 5px;
   font-size: 18px;
 }
 .base {
   font-size: 18px;
+}
+.mHead {
+  margin: 8px;
 }
 </style>

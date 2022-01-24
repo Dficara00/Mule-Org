@@ -1,9 +1,14 @@
 <template>
   <div>
-    <h1><u>Goal Runewords</u></h1>
+    <h1>
+      <img class="icon" src="@/assets/Necro.png" alt="" />
+      <u>Goal Runewords</u>
+      <img class="icon" src="@/assets/Tyreal.png" alt="" />
+    </h1>
     <div v-for="(value, key) in allItems" :key="key">
       <h2>{{ key }} {{ value }}</h2>
     </div>
+    <img class="icon" src="@/assets/Barbarian-icon.png" alt="" />
   </div>
 </template>
 
@@ -58,10 +63,8 @@ h2 {
   color: black;
   text-align: center;
 }
-.iconL {
+.icon {
   padding-left: 10px;
-}
-.iconR {
   padding-right: 10px;
 }
 </style>
