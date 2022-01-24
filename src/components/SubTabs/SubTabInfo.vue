@@ -1,4 +1,5 @@
 <template>
+  <!-- Horadric Cube recipie infromation found at http://classic.battle.net/diablo2exp/items/cube.shtml -->
   <form>
     <div>
       <h1>
@@ -127,11 +128,6 @@
         <b>Secret Cow Level = Tome of Town Portal + Wirt's Leg </b>
       </p>
     </div>
-    <!-- <div>
-            <h1>
-                <u>Crafting</u>
-            </h1>
-        </div> -->
   </form>
 </template>
 

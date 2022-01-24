@@ -1,6 +1,9 @@
 <template>
   <div class="tabs">
-    <component :is="currentTab"></component>
+    <p v-if="isLoading">Loading....</p>
+    <div v-else>
+      <component :itemsArray="itemsArray" :muleObject="muleObject" :is="currentTab" />
+    </div>
   </div>
 </template>
 
@@ -22,6 +25,7 @@ export default {
     return {
       muleObject: {},
       isLoading: false,
+      itemsArray: [],
     };
   },
   props: {
@@ -50,6 +54,7 @@ export default {
             } else {
               this.muleObject[muleName] = [data[item]];
             }
+            this.itemsArray.push(data[item].rune, data[item].base);
           });
         });
     },

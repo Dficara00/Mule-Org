@@ -1,42 +1,57 @@
 <template>
-  <form>
-    <div>
-      <h1>
-        <u>Goal Runewords</u>
-        <img class="iconL" src="@/assets/Tyreal.png" alt="" />
-      </h1>
+  <div>
+    <div v-for="(value, key) in allItems" :key="key">
+      <h2>{{ key }} {{ value }}</h2>
     </div>
-    <div>
-      <h2>Enigma - Available</h2>
-    </div>
-    <br />
-    <div>
-      <h2>
-        <img class="iconR" src="@/assets/Amazon.png" alt="" />
-        Infinity - Unavailable
-      </h2>
-    </div>
-    <br />
-    <div>
-      <h2>Call To Arms - Unavailable</h2>
-    </div>
-    <br />
-    <div>
-      <h2>
-        <img class="iconR" src="@/assets/Necro.png" alt="" />
-        Beast - Unavailable
-      </h2>
-    </div>
-  </form>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'SubTabRW',
-  // data() {},
-  computed: {},
+  data() {
+    return {
+      runewordRecipes: {
+        Enigma: ['Jah', 'Ith', 'Ber', 'Archon Plate'],
+        Insight: ['Ral', 'Tir', 'Tal', 'Sol', 'Thresher'],
+        CallToArms: ['Amn', 'Ral', 'Mal', 'Ist', 'Ohm', 'Flail'],
+        Beast: ['Ber', 'Tir', 'Um', 'Mal', 'Lum', 'Axe'],
+        Lore: ['Ort', 'Sol'],
+      },
+    };
+  },
+  props: {
+    muleObject: {
+      type: Object,
+      required: true,
+    },
+    itemsArray: {
+      type: Array,
+      required: true,
+    },
+  },
+
+  computed: {
+    allItems() {
+      const recipeStatus = {};
+      const runewords = Object.keys(this.runewordRecipes);
+      runewords.forEach((runeword) => {
+        recipeStatus[runeword] = 'Available';
+        this.runewordRecipes[runeword].forEach((piece) => {
+          if (this.itemsArray.indexOf(piece) === -1) {
+            console.log(this.itemsArray.indexOf(piece), 'beep');
+            recipeStatus[runeword] = 'Unavailable';
+          }
+        });
+      });
+      return recipeStatus;
+    },
+  },
+
   methods: {},
-  created() {},
+  created() {
+    console.log(this.allItems, 'bbop');
+  },
 };
 </script>
 
