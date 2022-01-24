@@ -2,14 +2,14 @@
   <div>
     <div>
       <h1>
-        <img class="stash" src="@/assets/stashClosed.png" alt="" />
+        <img class="icon" src="@/assets/stashClosed.png" alt="" />
         <u> Mule Inventories</u>
-        <img class="stash" src="@/assets/Treasure-Open-icon.png" alt="" />
+        <img class="icon" src="@/assets/Treasure-Open-icon.png" alt="" />
       </h1>
     </div>
     <br />
     <div v-for="(value, key) in muleObject" :key="key">
-      <h2>{{ key }}</h2>
+      <h2 class="muleead">{{ key }}</h2>
       <div class="invBox" v-for="item in value" :key="item.rune">
         <span class="rune"> {{ item.rune }} </span>
         <span class="base">{{ item.base }} </span>
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style>
-.stash {
+.icon {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -41,11 +41,11 @@ export default {
   align-items: center;
   color: black;
 }
-span.rune {
+.rune {
   padding: 4px;
   font-size: 18px;
 }
-span.base {
+.base {
   font-size: 18px;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1><u>Goal Runewords</u></h1>
     <div v-for="(value, key) in allItems" :key="key">
       <h2>{{ key }} {{ value }}</h2>
     </div>
@@ -16,7 +17,7 @@ export default {
         Insight: ['Ral', 'Tir', 'Tal', 'Sol', 'Thresher'],
         CallToArms: ['Amn', 'Ral', 'Mal', 'Ist', 'Ohm', 'Flail'],
         Beast: ['Ber', 'Tir', 'Um', 'Mal', 'Lum', 'Axe'],
-        Lore: ['Ort', 'Sol'],
+        Lore: ['Ort', 'Sol', 'Helm'],
       },
     };
   },
@@ -39,7 +40,6 @@ export default {
         recipeStatus[runeword] = 'Available';
         this.runewordRecipes[runeword].forEach((piece) => {
           if (this.itemsArray.indexOf(piece) === -1) {
-            console.log(this.itemsArray.indexOf(piece), 'beep');
             recipeStatus[runeword] = 'Unavailable';
           }
         });
@@ -47,11 +47,8 @@ export default {
       return recipeStatus;
     },
   },
-
   methods: {},
-  created() {
-    console.log(this.allItems, 'bbop');
-  },
+  created() {},
 };
 </script>
 
